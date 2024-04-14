@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .marquee {
+      width: 100%;
+      height: 100px;
+      background-color: yellow;
+      color: red;
+      font-size: 30px;
+      text-align: center;
+      line-height: 100px;
+      overflow: hidden;
+      animation: marquee 5s linear infinite;
+    }
+    .img {
+      width: 100%;
+      animation: marquee 5s linear infinite;
+    }
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+  <body>
+    <div class="marquee">Hello World</div>
+    <div class="img">
+      <img src="./Images/wp4676591-4k-pc-wallpapers.jpg" width="100px" alt="" />
+    </div>
+  </body>
+</html>
