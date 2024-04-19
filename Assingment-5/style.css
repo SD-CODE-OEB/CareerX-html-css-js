@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    max-height: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    background-image: url("./Images/Untitled design.png");
+    background-size: cover;
+    background-position: top;
+}
+
+.container_head {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+}
+
+.logo-main {
+    width: 100%;
+    image-orientation: from-image;
+}
+
+.big-text-bold {
+    font-size: 46px;
+    font-weight: 900;
+    text-align: left;
+}
+
+.big-text {
+    padding-top: 5px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.medium-text {
+    font-size: 1.28rem;
+    text-align: center;
+    word-spacing: 2px;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+footer {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    height: 15%;
+    margin: 0px 150px;
+}
+
+.heading .dropfoot {
+    display: inline-flex;
+    margin-top: 35px;
+}
+
+.heading .dropfoot button {
+    border-radius: 4px;
+    background-color: red;
+    width: 4.5rem;
+    height: 2rem;
+    font-size: 14px;
+    margin-left: 25px;
+    letter-spacing: 1px;
+    border: none;
+}
+
+.heading .dropfoot select {
+    border-radius: 4px;
+    width: 8rem;
+    font-size: 14px;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+    font-size: 16px;
+    height: 2rem;
+    letter-spacing: 1px;
+}
+
+.searchbox {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    width: 80%;
+    padding-top: 10px;
+    line-height: 52px;
+    height: 48%;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+}
+
+.emailbox {
+    align-self: center;
+    width: 84%;
+    text-align: center;
+}
+
+.searchbox form {
+    align-self: center;
+    text-align: center;
+    word-spacing: 10px;
+    background-color: transparent;
+    color: white;
+    margin: 0px 0px 3px 40px;
+}
+
+.searchbox form button {
+    height: 3.4rem;
+    width: 12rem;
+    border-radius: 7px;
+    background-color: red;
+    font-size: 22px;
+    letter-spacing: 1px;
+    border: none;
+}
+
+#email {
+    box-sizing: border-box;
+    width: 24rem;
+    height: 3.4rem;
+    color: white;
+    background-color: black;
+    font-size: large;
+    padding-left: 15px;
+    border: 1px solid darkgrey;
+    border-radius: 6px;
+    opacity: .7;
+    font-family: unset;
+}
+
+.container_foot {
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    width: 70%;
+    align-items: baseline;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.question {
+    height: 22px;
+    box-sizing: content-box;
+}
+
+.links {
+    display: inline-flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.links ul {
+    display: inline-grid;
+    grid-gap: 26px 188px;
+    grid-template-columns: 105px 95px 110px 90px;
+    margin: 15px 0px;
+}
+
+.links ul li {
+    list-style: none;
+    display: inline-flex;
+}
+
+footer a:any-link {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.dropfoot {
+    box-sizing: content-box;
+}
+
+.dropfoot select,
+button {
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding: 0px 5px;
+    border: 1px solid darkgray;
+    border-radius: .2rem;
+    height: 35px;
+    width: 135px;
+}
+
+#lang {
+    padding: 8px 4px;
+    min-width: 45px;
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    margin-right: 800px;
+}
+
+#name {
+    display: flex;
+    list-style: none;
+    font-size: 52px;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    width: 14rem;
+    color: red;
+}
+
+#name li {
+    margin: 0px -3px;
+    transform: perspective(.7);
+}
+
+#name li:first-child,
+li:last-child {
+    font-size: 55px;
+}
+
+#name li:nth-child(3) {
+    letter-spacing: 2px;
+}
+
+.container_main {
+    height: 100%;
+    width: 100%;
+}
+
+.block1 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    border: 5px solid grey;
+    padding: 25px 0;
+    flex-wrap: wrap;
+    border-style: solid none;
+}
+
+.box-1,
+.box-2 {
+    width: 50%;
+    /* background-color: antiquewhite; */
+    align-self: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.block1 .box-1 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.main-text {
+    font-size: 48px;
+}
+
+.text-center {
+    text-align: center;
+    font-size: 25px;
+    width: 85%;
+}
+
+.block1 .box-2 img {
+    height: 400px;
+    position: relative;
+    bottom: -120px;
+    left: -80px;
+    z-index: 50;
+    overflow: hidden;
+}
+
+.block1 .box-2 video {
+    position: relative;
+    top: -201px;
+    width: 455px;
+    left: -48px;
+    z-index: 49;
+    overflow: hidden;
+}
+
+.block2 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    padding: 16px;
+    flex-wrap: wrap;
+    border: 5px solid grey;
+    border-style: none none solid none;
+}
+
+.text-center-2 {
+    width: 75%;
+    font-size: 25px;
+    text-align: left;
+}
+
+.left-text {
+    text-align: left;
+    font-size: 46px;
+    width: 75%;
+}
+
+.block2 .box-1 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block2 .box-1 .phnimg {
+    height: 405px;
+    position: relative;
+    bottom: -125px;
+    right: -65px;
+}
+
+.str-box {
+    height: 105px;
+    width: 300px;
+    display: inline-flex;
+    position: relative;
+    top: -10px;
+    right: -62px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0.75rem;
+    align-items: center;
+    gap: 5px;
+}
+
+.str-img img {
+    display: inline-block;
+    height: 75px;
+    margin-left: 5px;
+}
+
+.str-box p {
+    display: inline-block;
+    align-self: center;
+    width: 155px;
+    margin-left: 10px;
+}
+
+.str-box p small {
+    color: blue;
+}
+
+.downloadlogo {
+    height: 52px;
+    width: 52px;
+    background: url('https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif') center center no-repeat;
+    background-size: 100%;
+}
+
+.block3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block3 .box-1 {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.block3 .box-1 .childpic {
+    height: 405px;
+    align-self: center;
+}
+
+.block4 .box-2 img {
+    position: relative;
+    top: -0px;
+    z-index: 105;
+    overflow: hidden;
+}
+
+.block4 .box-2 video {
+    position: relative;
+    top: -372px;
+    left: -82px;
+    height: 185px;
+    z-index: 104;
+    /* overflow: hidden; */
+}
+
+.footbox1,
+.footbox2 {
+    width: 15%;
+}
