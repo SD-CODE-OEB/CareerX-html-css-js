@@ -1,8 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    max-height: 100%;
-    max-width: 100%;
     box-sizing: border-box;
     font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
 }
@@ -26,15 +24,15 @@ header {
     font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
 }
 
-.logo-main {
-    width: 100%;
+.logo-main img {
     image-orientation: from-image;
+    width: 155px;
 }
 
 .big-text-bold {
     font-size: 46px;
     font-weight: 900;
-    text-align: left;
+    text-align: center;
 }
 
 .big-text {
@@ -52,6 +50,7 @@ header {
 
 body {
     background-color: black;
+    overflow-x: hidden;
     color: white;
 }
 
@@ -65,7 +64,7 @@ footer {
 .heading {
     display: flex;
     justify-content: space-between;
-    height: 15%;
+    height: 100px;
     margin: 0px 150px;
 }
 
@@ -405,4 +404,17 @@ li:last-child {
 .footbox1,
 .footbox2 {
     width: 15%;
+}
+
+@media (max-width:800px) {
+    .container_head {
+        height: 100%;
+        width: 100%;
+    }
+
+    .heading {
+        margin: none;
+        width: 80%;
+    }
+
 }
