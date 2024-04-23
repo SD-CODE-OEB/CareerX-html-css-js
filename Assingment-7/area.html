@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A2</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    label {
+      font-size: 16px;
+    }
+    input {
+      padding: 5px 10px;
+      font-size: 16px;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+    #display {
+      font-size: 16px;
+      margin: 10px;
+      padding: 5px 10px;
+      width: max-content;
+      border: 3px double black;
+    }
+    button {
+      padding: 5px 10px;
+      width: 150px;
+      font-size: 16px;
+      margin: 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <h3>Checking Area of Rectangle/Square</h3>
+    <p>
+      <label for="length">Length&nbsp; </label>
+      <input type="text" name="length" id="length" />
+    </p>
+    <p>
+      <label for="breadth">Breadth</label>
+      <input type="text" name="breadth" id="breadth" />
+    </p>
+    <button type="submit" onclick="AOR()">go</button>
+    <div id="display">Answer Will Be Displayed Here</div>
+    <script>
+      const display = document.getElementById("display");
+      const length = document.getElementById("length");
+      const breadth = document.getElementById("breadth");
+      const AOR = () => {
+        const l = Number(length.value);
+        const b = Number(breadth.value);
+        if (l == b) {
+          display.innerText = `Length and Breadth are equal, It's a Square.\nArea of Square is ${
+            l * l
+          }.`;
+        } else {
+          display.innerText = `Length and Breadth are not same, It's a Rectangle.\nArea of Rectangle is ${
+            l * b
+          }.`;
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A1</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #display {
+      font-size: 20px;
+      margin: 10px;
+      display: flex;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 3px double black;
+      width: 200px;
+    }
+    input {
+      padding: 5px 10px;
+      font-size: 16px;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+    button {
+      padding: 5px 10px;
+      font-size: 16px;
+      width: 150px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      margin: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <h3>Checking Of Positive/Negative Number</h3>
+    <input type="text" name="num" id="num" placeholder="Enter any number" />
+    <button type="submit" onclick="plusMinus()">go</button>
+    <div id="display">Answer Will Be Displayed Here</div>
+    <script>
+      const input = document.getElementById("num");
+      const display = document.getElementById("display");
+      const plusMinus = () => {
+        inputValue = Number(input.value);
+        if (inputValue > 0) {
+          display.innerText = "Positive";
+        } else if (inputValue < 0) {
+          display.innerText = "Negative";
+        } else {
+          display.innerText = "Zero";
+        }
+      };
+    </script>
+  </body>
+</html>

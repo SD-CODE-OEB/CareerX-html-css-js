@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A7</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #display{
+      text-align: center;
+      padding: 12px;
+      font-size: 20px;
+      margin: 10px;
+      height: 50px;
+      width: 200px;
+      border: 3px double black;
+    }
+    button{
+      padding: 5px 10px;
+      width: 150px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input{
+      padding: 5px 10px;
+      width: 200px;
+      font-size: 16px;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Grading The Students</h3>
+  <p>
+    <input type="text" name="marks" id="marks" placeholder="Enter Student Marks">
+  </p>
+  <button type="submit" onclick="grade()">go</button>
+  <div id="display"> Answer Will Be Displayed Here</div>
+  <script>
+    const display = document.getElementById("display");
+    const marks = document.getElementById("marks");
+    const grade = () =>{
+      const m = Number(marks.value);
+      if(m >= 80){
+        display.innerText = ` ${m} Marks is Excellent\n Grade-A`;
+      }else if(m >= 60){
+        display.innerText = `${m} Marks is Very Good\n Grade-B`;
+      }else if(m >= 50){
+        display.innerText = `${m} Marks is Good\n Grade-C`;
+      }else if(m >= 45){
+        display.innerText = `${m} Marks is Average\n Grade-D`;
+      }else if(m >= 25){
+        display.innerText = `${m} Marks is Poor\n Grade-E`;
+      }else if(m < 25){
+        display.innerText = `${m} Marks are Bad\n Grade-F`;
+      }else{
+        display.innerText = `${m} Marks are Bad\n Grade-F`;
+      }
+    }
+
+  </script>
+</body>
+</html>
