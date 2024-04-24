@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A6</title>
-  <style>
-    body{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    #display{
-      display: flex;
-      padding: 12px;
-      justify-content: center;
-      width: 220px;
-      align-items: center;
-      border: 3px double black;
-      text-align: center;
-    }
-    label{
-      font-size: 16px;
-    }
-    input{
-      padding: 5px 10px;
-      width: 150px;
-      font-size: 16px;
-      border: 1px solid black;
-      border-radius: 5px;
-    }
-    button{
-      padding: 5px 10px;
-      width: 150px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      margin: 25px 0;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <h3>Checking Number Divisibility With 5</h3>
-  <p>
-    <label for="num">Enter a Number : </label>
-    <input type="text" name="num" id="num">
-  </p>
-  <button type="submit" onclick="check()">Check</button>
-  <div id="display"> Answer Will Be Displayed Here</div>
-  <script>
-    const input = document.getElementById("num");
-    const display = document.getElementById("display");
-    const check = () => {
-      inputValue = Number(input.value);
-      if(inputValue % 5 == 0){
-        display.innerText = `Number ${inputValue} is Divisible by 5.`;
-      } else {
-        display.innerText = `Number ${inputValue} is not Divisible by 5.`;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A6</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
       }
-    }
-  </script>
-</body>
+      #display {
+        display: flex;
+        padding: 12px;
+        justify-content: center;
+        width: 220px;
+        align-items: center;
+        border: 3px double black;
+        text-align: center;
+      }
+      label {
+        font-size: 16px;
+      }
+      input {
+        padding: 5px 10px;
+        width: 150px;
+        font-size: 16px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+      button {
+        padding: 5px 10px;
+        width: 150px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        margin: 25px 0;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Checking Number Divisibility With 5</h3>
+    <p>
+      <label for="num">Enter a Number : </label>
+      <input type="text" name="num" id="num" />
+    </p>
+    <button type="submit" onclick="check()">Check</button>
+    <div id="display">Answer Will Be Displayed Here</div>
+    <script>
+      const input = document.getElementById("num");
+      const display = document.getElementById("display");
+      const check = () => {
+        inputValue = Number(input.value);
+        if (inputValue % 5 == 0) {
+          display.innerText = `Number ${inputValue} is Divisible by 5.`;
+        } else {
+          display.innerText = `Number ${inputValue} is not Divisible by 5.`;
+        }
+      };
+    </script>
+  </body>
 </html>

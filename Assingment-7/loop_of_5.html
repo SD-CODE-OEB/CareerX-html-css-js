@@ -1,79 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A4</title>
-  <style>
-    body{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .box{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      margin: 20px;
-      padding: 20px;
-      border: 2px solid black;
-      width: 50%;
-    }
-    button{
-      padding: 5px 10px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      margin-bottom: 15px;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .display{
-      font-size: 20px;
-      display: flex;
-      padding: 10px;
-      width: 150px;
-      justify-content: center;
-      align-items: center;
-      border: 3px double black;
-    }
-  </style>
-</head>
-<body>
-  <div class="box">
-    <h3>Printing Multiples of 5 Using While Loop:</h3>
-    <button type="submit" onclick="printMultiplesWhile()">Print Multiples of 5</button>
-    <div id="displayWhile" class="display"></div>
-  </div>
-  <div class="box">
-    <h3>Printing Multiples of 5 Using For Loop:</h3>
-    <button type="submit" onclick="printMultiplesFor()">Print Multiples of 5</button>
-    <div id="displayFor" class="display"></div>
-  </div>
-  <script>
-    const displayWhile = document.getElementById("displayWhile");
-    const displayFor = document.getElementById("displayFor");
-    const printMultiplesWhile = () => {
-      let i = 1;
-      let result = "";
-      while(i <= 5){
-        result += `${i*5} `;
-        i++;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A4</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
       }
-      displayWhile.innerText = result;
-    }
-    const printMultiplesFor = () => {
-      let result = "";
-      for(let i = 1; i <= 5; i++){
-        result += `${i*5} `;
+      .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 20px;
+        padding: 20px;
+        border: 2px solid black;
+        width: 50%;
       }
-      displayFor.innerText = result;
-    }
-  </script>
-</body>
+      button {
+        padding: 5px 10px;
+        font-size: 16px;
+        background-color: #4caf50;
+        margin-bottom: 15px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .display {
+        font-size: 20px;
+        display: flex;
+        padding: 10px;
+        width: 150px;
+        justify-content: center;
+        align-items: center;
+        border: 3px double black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h3>Printing Multiples of 5 Using While Loop:</h3>
+      <button type="submit" onclick="printMultiplesWhile()">
+        Print Multiples of 5
+      </button>
+      <div id="displayWhile" class="display"></div>
+    </div>
+    <div class="box">
+      <h3>Printing Multiples of 5 Using For Loop:</h3>
+      <button type="submit" onclick="printMultiplesFor()">
+        Print Multiples of 5
+      </button>
+      <div id="displayFor" class="display"></div>
+    </div>
+    <script>
+      const displayWhile = document.getElementById("displayWhile");
+      const displayFor = document.getElementById("displayFor");
+      const printMultiplesWhile = () => {
+        let i = 1;
+        let result = "";
+        while (i <= 5) {
+          result += `${i * 5} `;
+          i++;
+        }
+        displayWhile.innerText = result;
+      };
+      const printMultiplesFor = () => {
+        let result = "";
+        for (let i = 1; i <= 5; i++) {
+          result += `${i * 5} `;
+        }
+        displayFor.innerText = result;
+      };
+    </script>
+  </body>
 </html>
