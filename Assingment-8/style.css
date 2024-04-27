@@ -175,6 +175,7 @@ body {
     opacity: 1;
     border: 1px solid #ccc;
     padding: 10px;
+    border-radius: 8px;
     background-color: white;
     margin: auto;
 }
