@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook - login or signup</title>
+    <link rel="shortcut icon" href="facebook.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container-login">
+      <div class="lefty">
+        <div class="top">
+          <h1>facebook</h1>
+          <h2>
+            Facebook helps you connect and share with the people in your life.
+          </h2>
+        </div>
+      </div>
+      <div class="righty">
+        <div class="top">
+          <form action="index.html" method="get">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email address or phone number"
+              required
+            />
+            <br />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <br />
+            <input type="submit" value="Submit" />
+          </form>
+          <a href="#">Forgotten password?</a>
+          <div class="line"></div>
+          <button type="button" id="signup">Create new account</button>
+        </div>
+        <div class="bottom">
+          <h3><span>Create a Page</span> for a celebrity, band or business.</h3>
+        </div>
+      </div>
+    </div>
+    <div class="container-sign-up">
+      <div class="form">
+        <div class="head">
+          <h1>Sign Up</h1>
+          <p>It's quick and easy.</p>
+          <span class="material-symbols-outlined cross" id="login">
+            close
+          </span>
+        </div>
+        <div class="line"></div>
+        <form action="index.html" method="get">
+          <p class="name">
+            <input
+              type="text"
+              name="fname"
+              class="fname"
+              placeholder="First name"
+              required
+            />
+            <input
+              type="text"
+              name="surname"
+              class="surname"
+              placeholder="Surname"
+              required
+            />
+          </p>
+          <p class="e-num">
+            <input
+              type="text"
+              name="email-num"
+              placeholder="Mobile number or email address"
+              required
+            />
+          </p>
+          <p class="pwd">
+            <input
+              type="password"
+              name="password"
+              class="password"
+              placeholder="New password"
+              required
+            />
+          </p>
+          <p class="dob">
+            <label for="dob">Date of birth</label>
+            <br />
+            <span>
+              <select name="day" id="day" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+              <select name="month" id="month" required>
+                <option value="jan">Jan</option>
+                <option value="feb">Feb</option>
+                <option value="mar">Mar</option>
+                <option value="apr">Apr</option>
+                <option value="may">May</option>
+                <option value="jun">Jun</option>
+                <option value="jul">Jul</option>
+                <option value="aug">Aug</option>
+                <option value="sep">Sep</option>
+                <option value="oct">Oct</option>
+                <option value="nov">Nov</option>
+                <option value="dec">Dec</option>
+              </select>
+              <select name="year" id="year" required>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+                <option value="2000">2000</option>
+                <option value="1999">1999</option>
+                <option value="1998">1998</option>
+                <option value="1997">1997</option>
+                <option value="1996">1996</option>
+                <option value="1995">1995</option>
+              </select>
+            </span>
+          </p>
+          <p class="gender">
+            <label for="gender">Gender</label>
+            <span>
+              Female<input type="radio" name="gender" id="gender" required />
+            </span>
+            <span>
+              Male<input type="radio" name="gender" id="gender" required />
+            </span>
+            <span>
+              Custom<input type="radio" name="gender" id="gender" required />
+            </span>
+          </p>
+          <p>
+            people who use our service may have uploaded your contact
+            information to Facebook. <a href="#">Learn more.</a>
+          </p>
+          <p>
+            By clicking Sign Up, you agree to our <a href="#">Terms</a>,
+            <a href="#">Data Policy</a> and <a href="#">Cookie Policy</a>. You
+            may receive SMS notifications from us and can opt out at any time.
+          </p>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
