@@ -6,6 +6,15 @@ const page2 = document.querySelector('.container-sign-up');
 
 const login = document.getElementById('login');
 
+const mail = document.getElementById('email');
+
+const form = document.querySelector('.righty .top');
+
+const welcome = document.querySelector('.righty .welcome-box');
+
+const submit = document.getElementById('submit');
+
+const display = document.getElementById('display');
 
 signup.addEventListener("click", () => {
     page1.classList.add('hide');
@@ -15,4 +24,14 @@ signup.addEventListener("click", () => {
 login.addEventListener("click", () => {
     page1.classList.remove('hide');
     page2.classList.remove('show');
+});
+
+submit.addEventListener("click", (e) => {
+    e.preventDefault();
+    let symbol = mail.value.indexOf('@');
+    let username = mail.value.slice(0, symbol);
+    username = username.charAt(0).toUpperCase() + username.slice(1);
+    form.classList.add('hide');
+    welcome.classList.add('welcome');
+    display.innerHTML = `Welcome To Facebook, <span>${username}</span>`;
 });
