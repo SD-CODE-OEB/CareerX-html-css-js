@@ -76,6 +76,18 @@ display: none;
     align-items: center;
     height: 300px;
     width: 100%;
+    position: relative;
+}
+
+.ans-body .score{
+    position: absolute;
+    top: 0;
+    right: 75px;
+    text-align: center;
+    color: green;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 10px;
 }
 
 .ans-body .ans-box{
@@ -91,6 +103,7 @@ display: none;
     width: 300px;
     height: 50px;
     font-size: 1rem;
+    text-align: center;
     padding: 10px 20px;
     border: 2px solid brown;
     background-color: beige;
@@ -103,6 +116,13 @@ display: none;
     text-align: center;
     color: steelblue;
     font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.ans-body .display2{
+    text-align: center;
+    color: red;
+    font-size: 1rem;
     font-weight: 600;
     margin: 10px;
 }
