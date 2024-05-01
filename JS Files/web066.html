@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+    const users =[];
+      function validate() {
+        let strEmail = document.getElementById("txtEmail").value;
+        let strPass = document.getElementById("txtPass").value;
+                if (strEmail === users[0].email && strPass === users[0].password) {
+                  lblMessage.innerHTML = `Welcome ${users[0].name}`;
+                } else {
+                  lblMessage.innerHTML = "Access Denied";
+                }
+      }
+      function register(){
+       //store name,email and password in an array
+       // of objects
+       //use array.push method
+       //users = [{name:"john",email:"john@gmail.com",pass:1234}]
+      ////code here////
+      const name = document.getElementById('txtRegName').value;
+      const email = document.getElementById('txtRegEmail').value;
+      const password = document.getElementById('txtRegPass').value;
+      const lbl = document.getElementById('lblRegMessage')
+      /////////////
+      let new_user = {};
+      new_user.name = name;
+      new_user.email = email;
+      new_user.password = password;
+      users.push(new_user);
+      lbl.innerHTML = `Hello ${new_user.name}`;
+      console.log(users)
+    }
+    </script>
+  </head>
+  <body>
+    <h3>Login Here...</h3>
+    <p><label id="lblMessage"></label></p>
+    <p><input type="text" id="txtEmail" placeholder="Enter Email" /></p>
+    <p><input type="password" id="txtPass" placeholder="Enter Password" /></p>
+    <button onclick="validate()">Login</button>
+    <hr />
+    <h3>Register Here...</h3>
+    <p><label id="lblRegMessage"></label></p>
+    <p><input type="text" id="txtRegName" placeholder="Enter Name" /></p>
+    <p><input type="text" id="txtRegEmail" placeholder="Enter Email" /></p>
+    <p>
+      <input type="password" id="txtRegPass" placeholder="Enter Password" />
+    </p>
+    <button onclick="register()">Register</button>
+  </body>
+</html>
