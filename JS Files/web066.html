@@ -21,11 +21,15 @@
       .login-box,
       .signup-box {
         width: 300px;
+        height: 450px;
         padding: 20px;
         background-color: #fff;
         border-radius: 5px;
         background: lightyellow;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .login-box{
+        height: 400px;
       }
       .login-box h3 {
         text-align: center;
@@ -61,8 +65,9 @@
       }
 
       .login-box button {
-        width: 100%;
+        width: 100px;
         padding: 10px;
+        margin-left: 75px;
         color: chartreuse;
         background-color: black;
         border: none;
@@ -73,6 +78,7 @@
 
       .login-box button:hover{
         background-color: #4caf50;
+        color: white;
         font-weight: 700;
       }
 
@@ -85,18 +91,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 10px;
+        margin: 5px 0;
         font-size: 14px;
       }
 
       .login-box p button,
       .signup-box p button {
-        width: 150px;
+        width: 200px;
         color: black;
         font-weight: 600;
         background-color: #fff;
         margin: 5px 0;
         text-align: center;
+      }
+      .login-box p button{
+        margin-top: 15px;
       }
       .login-box p button:hover,
       .signup-box p button:hover {
@@ -112,12 +121,12 @@
         text-align: center;
         color: white;
         background: blue;
-        margin-bottom: 10px;
       }
 
       .signup-box button{
-        width: 100%;
+        width: 100px;
         padding: 10px;
+        margin-left: 75px;
         background-color: blue;
         color: #fff;
         border: none;
@@ -136,33 +145,6 @@
       }
     </style>
     <script>
-<<<<<<< HEAD
-        const users =[];
-        function validate() {
-            let strEmail = document.getElementById("txtEmail").value;
-            let strPass = document.getElementById("txtPass").value;
-            let found = users.find((user) =>{
-                return user.email === strEmail && user.password === strPass;
-            });
-                if (found) {
-                    let name = found.name;
-                    lblMessage.innerHTML = `Welcome ${name}`;
-                } else {
-                    lblMessage.innerHTML = "Access Denied";
-                }
-        }
-        function register(){
-            //store name,email and password in an array
-            // of objects
-            //use array.push method
-            //users = [{name:"john",email:"john@gmail.com",pass:1234}]
-            ////code here////
-            const name = document.getElementById('txtRegName').value;
-            const email = document.getElementById('txtRegEmail').value;
-            const password = document.getElementById('txtRegPass').value;
-            const lbl = document.getElementById('lblRegMessage')
-            /////////////
-=======
       const users = [];
       function validate() {
         let strEmail = document.getElementById("txtEmail").value;
@@ -187,7 +169,6 @@
         const lbl = document.getElementById("lblRegMessage");
         ////////////
         lbl.classList.remove("hide");
->>>>>>> 08b0ee6b4aa958c341ea3732e7860f5eb008e854
         let new_user = {};
         new_user.name = name;
         new_user.email = email;
@@ -221,11 +202,11 @@
         <p>
           <input type="password" id="txtPass" placeholder="Enter Password" />
         </p>
-        <button onclick="validate()">Login</button>
+        <button type="button" onclick="validate()">Login</button>
         <div class="line"></div>
         <p>
           Create a new account?
-          <button onclick="signUp()">Create Account</button>
+          <button type="button" onclick="signUp()">Create Account</button>
         </p>
       </div>
       <div class="signup-box">
@@ -236,11 +217,11 @@
         <p>
           <input type="password" id="txtRegPass" placeholder="Enter Password" />
         </p>
-        <button onclick="register()">Register</button>
+        <button  type="button" onclick="register()">Register</button>
         <div class="line"></div>
         <p>
           Already a member?
-          <button onclick="logIn()">Log in</button>
+          <button type="button" onclick="logIn()">Log in</button>
         </p>
       </div>
     </div>
