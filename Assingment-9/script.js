@@ -92,6 +92,9 @@ ansBtn.addEventListener("click", (e) => {
         if(score.lastChild.innerText == 10){
             display.style.color = "green";
             display.style.fontSize = "2rem";
+            nextBtn.style.display = "none";
+            prevBtn.style.display = "none";
+            answer.style.display = "none";
             display.innerText = "You Win!!";
             ansBtn.style.display = "none";
         }
