@@ -4,52 +4,217 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f1f1f1;
+      }
+      .login-box,
+      .signup-box {
+        width: 300px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        background: lightyellow;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .login-box h3 {
+        text-align: center;
+        color: chartreuse;
+        background-color: black;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      .signup-box h3{
+        text-align: center;
+        color: blue;
+        background-color:white;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .login-box input,
+      .signup-box input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .login-box input:focus,
+      .signup-box input:focus {
+        outline: none;
+      }
+
+      .login-box button {
+        width: 100%;
+        padding: 10px;
+        color: chartreuse;
+        background-color: black;
+        border: none;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .login-box button:hover{
+        background-color: #4caf50;
+        font-weight: 700;
+      }
+
+      .signup-box button:hover{
+        background-color: rgb(0, 0, 190);
+        font-weight: 700;
+      }
+      .login-box p , .signup-box p{
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      .login-box p button,
+      .signup-box p button {
+        width: 150px;
+        color: black;
+        font-weight: 600;
+        background-color: #fff;
+        margin: 5px 0;
+        text-align: center;
+      }
+      .login-box p button:hover,
+      .signup-box p button:hover {
+        background-color: #ccc;
+      }
+      .line {
+        height: 1px;
+        background-color: #ccc;
+        margin: 10px 0;
+      }
+
+      .signup-box h3 {
+        text-align: center;
+        color: white;
+        background: blue;
+        margin-bottom: 10px;
+      }
+
+      .signup-box button{
+        width: 100%;
+        padding: 10px;
+        background-color: blue;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .hide {
+        display: none;
+      }
+      .container label{
+        font-size: 16px;
+        color: red;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+    </style>
     <script>
-        function validate() {
-            let strEmail = document.getElementById("txtEmail").value;
-            let strPass = document.getElementById("txtPass").value;
-            if (strEmail === users[0].email && strPass === users[0].password) {
-                lblMessage.innerHTML = `Welcome ${users[0].name}`;
-            } else {
-                lblMessage.innerHTML = "Access Denied";
-            }
+      const users = [];
+      function validate() {
+        let strEmail = document.getElementById("txtEmail").value;
+        let strPass = document.getElementById("txtPass").value;
+        let found = users.find((user) => {
+          return user.email === strEmail && user.password === strPass;
+        });
+        let lbl = document.getElementById("lblMessage");
+        lbl.classList.remove("hide");
+        if (found) {
+          lbl.innerHTML = `Welcome Back ${found.name} !!`;
+        } else {
+          lbl.innerHTML = "Invalid Email or Password";
         }
-        function register(){
-            //store name,email and password in an array
-            // of objects
-            //use array.push method
-            //users = [{name:"john",email:"john@gmail.com",pass:1234}]
-            ////code here////
-            const name = document.getElementById('txtRegName').value;
-            const email = document.getElementById('txtRegEmail').value;
-            const password = document.getElementById('txtRegPass').value;
-            const lbl = document.getElementById('lblRegMessage')
-            /////////////
-        const users =[];
+      }
+      function register() {
+        //users = [{name:"john",email:"john@gmail.com",pass:1234}]
+        ////code here////
+        const name = document.getElementById("txtRegName").value;
+        const email = document.getElementById("txtRegEmail").value;
+        const password = document.getElementById("txtRegPass").value;
+        const lbl = document.getElementById("lblRegMessage");
+        ////////////
+        lbl.classList.remove("hide");
         let new_user = {};
         new_user.name = name;
         new_user.email = email;
         new_user.password = password;
         users.push(new_user);
         lbl.innerHTML = `Hello ${new_user.name}`;
-        console.log(users)
-    }
+        console.log(users);
+      }
+
+      function signUp() {
+        let login = document.querySelector(".login-box");
+        let signup = document.querySelector(".signup-box");
+        login.classList.add("hide");
+        signup.classList.remove("hide");
+      }
+
+      function logIn() {
+        let login = document.querySelector(".login-box");
+        let signup = document.querySelector(".signup-box");
+        login.classList.remove("hide");
+        signup.classList.add("hide");
+      }
     </script>
   </head>
   <body>
-    <h3>Login Here...</h3>
-    <p><label id="lblMessage"></label></p>
-    <p><input type="text" id="txtEmail" placeholder="Enter Email" /></p>
-    <p><input type="password" id="txtPass" placeholder="Enter Password" /></p>
-    <button onclick="validate()">Login</button>
-    <hr />
-    <h3>Register Here...</h3>
-    <p><label id="lblRegMessage"></label></p>
-    <p><input type="text" id="txtRegName" placeholder="Enter Name" /></p>
-    <p><input type="text" id="txtRegEmail" placeholder="Enter Email" /></p>
-    <p>
-      <input type="password" id="txtRegPass" placeholder="Enter Password" />
-    </p>
-    <button onclick="register()">Register</button>
+    <div class="container">
+      <div class="login-box hide">
+        <h3>Login Here</h3>
+        <p><label id="lblMessage" class="hide"></label></p>
+        <p><input type="text" id="txtEmail" placeholder="Enter Email" /></p>
+        <p>
+          <input type="password" id="txtPass" placeholder="Enter Password" />
+        </p>
+        <button onclick="validate()">Login</button>
+        <div class="line"></div>
+        <p>
+          Create a new account?
+          <button onclick="signUp()">Create Account</button>
+        </p>
+      </div>
+      <div class="signup-box">
+        <h3>Register Here</h3>
+        <p><label id="lblRegMessage" class="hide"></label></p>
+        <p><input type="text" id="txtRegName" placeholder="Enter Name" /></p>
+        <p><input type="text" id="txtRegEmail" placeholder="Enter Email" /></p>
+        <p>
+          <input type="password" id="txtRegPass" placeholder="Enter Password" />
+        </p>
+        <button onclick="register()">Register</button>
+        <div class="line"></div>
+        <p>
+          Already a member?
+          <button onclick="logIn()">Log in</button>
+        </p>
+      </div>
+    </div>
   </body>
 </html>
