@@ -8,6 +8,8 @@ const login = document.getElementById('login');
 
 const mail = document.getElementById('email');
 
+const pwd = document.getElementById('password');
+
 const form = document.querySelector('.righty .top');
 
 const welcome = document.querySelector('.righty .welcome-box');
@@ -28,10 +30,14 @@ login.addEventListener("click", () => {
 
 submit.addEventListener("click", (e) => {
     e.preventDefault();
-    let symbol = mail.value.indexOf('@');
-    let username = mail.value.slice(0, symbol);
-    username = username.charAt(0).toUpperCase() + username.slice(1);
-    form.classList.add('hide');
-    welcome.classList.add('welcome');
-    display.innerHTML = `Welcome To Facebook, <span>${username}</span>`;
+    if(mail.value === "john@gmail.com" && pwd.value ==="1234"){
+        form.classList.add('hide');
+        welcome.classList.add('welcome');
+        display.innerHTML = "Welcome John";
+    } else{
+        form.classList.add('hide');
+        welcome.classList.add('welcome');
+        display.style.color = "red";
+        display.innerHTML = ("Access Denied!, Invalid email or password");
+    }
 });
