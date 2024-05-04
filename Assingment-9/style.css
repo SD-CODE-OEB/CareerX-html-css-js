@@ -21,7 +21,8 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 50%;
+    width: 600px;
+    min-width: 200px;
     height:auto;
     margin: auto;
     background-color: #fbf6be;
@@ -118,6 +119,19 @@ display: none;
     margin: 10px;
 }
 
+#restart{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: red;
+    color: yellow;
+    border: 2px solid yellow;
+    padding: 8px 10px;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
 .ans-body .ans-box{
     display: flex;
     justify-content: center;
@@ -139,6 +153,11 @@ display: none;
     outline: none;
     transition: all 0.8s ease-out;
     margin: 10px;
+}
+
+.ans-box input:focus{
+    border: 3px solid green;
+    background-color: #fff;
 }
 
 .ans-body .display{
@@ -170,6 +189,12 @@ display: none;
     cursor: pointer;
     margin: 10px;
 }
+
+.ans-box button:focus{
+    border: 3px solid green;
+    background-color: #fff;
+    color: green;
+}
 .btn-box{
     width: 400px;
     display: flex;
@@ -192,12 +217,19 @@ display: none;
     margin: 10px;
 }
 
+
 .btn-box button:hover{
     font-weight: 700;
     animation: none;
     border-radius: 25px;
     transform: scale(1.1);
     width: 150px;
+}
+
+.btn-box button:focus{
+    border: 3px solid green;
+    background-color: #fff;
+    color: green;
 }
 
 #next, #prev{

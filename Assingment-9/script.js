@@ -59,7 +59,7 @@ ansBtn.addEventListener("click", (e) => {
     answer.style.animation = "none";
     display.style.animation = "none";
     displayIncorrect.style.animation = "none";
-    if(ans == "Infinity" || ans == "NaN"){
+    if(ans == "Infinity" || ans == NaN){
         ans = "undefined";
     }
     if(answer.value == ans){
@@ -70,11 +70,7 @@ ansBtn.addEventListener("click", (e) => {
         ansBtn.style.display = "none";
         score.style.animation = "show .8s ease-in-out";
         score.innerText = parseInt(score.innerText) + 1;
-        nextBtn.style.animation = " pop 1.5s ease-in-out infinite";
-        nextBtn.addEventListener("mouseover", (e) => {
-            e.preventDefault();
-            nextBtn.style.animation = "none";
-        });
+        nextBtn.style.animation = " pop 1.5s ease-in-out";
     } else {
         displayIncorrect.style.animation = "pop .9s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
         displayIncorrect.innerText = `It's Wrong, Try Again(${i+=1})`
@@ -91,6 +87,7 @@ ansBtn.addEventListener("click", (e) => {
         display.style.fontWeight = "lighter";
         display.style.color = "green";
         display.innerText = "Congratulations!!, You have completed the test.";
+        displayIncorrect.innerText = "You Win!!"
         ansBtn.style.display = "none";
         nextBtn.style.display = "none";
         answer.style.display = "none";

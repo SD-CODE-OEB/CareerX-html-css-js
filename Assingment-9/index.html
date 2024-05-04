@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="style.css">
     <title>Quiz</title>
 </head>
@@ -16,8 +17,9 @@
          Note:
          <br> 1. You win 1 point for each correct answer.
          <br> 2. Quiz ends when you answer 5 Questions correct.
-         <br> 3. You can restart the quiz , after the game ends.
+         <br> 3. You can restart the quiz , anytime during the game.
          <br> 4. You can skip the question by clicking on next button.
+         <br> 5. If anything is divided by 0 or, answer is ' udefined ' 
         </p>
    <button type="button" id="start" class="btn-start">
    Start Quiz
@@ -25,6 +27,11 @@
         </div>
      <div class="ans-body">
       <div class="score" id="score">Score: <label>0</label></div>
+      <button type="button" id="restart" class="btn">
+         <span class="material-symbols-outlined">
+            replay
+            </span>
+      </button>
       <p id="incorrect-display" class="display2"></p>
            <p id="display" class="display">
               Question Here
@@ -38,9 +45,6 @@
    <div class = "btn-box hide">
    <button type="button" id="next" class="btn">
    Next
-   </button>
-   <button type="button" id="restart" class="btn hide">
-   Restart
    </button>
           </div>      
         </div>    
