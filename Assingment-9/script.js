@@ -13,114 +13,107 @@ const answer = document.getElementById('answer');
 
 const ansBtn = document.getElementById('btn-ans');
 
-const score = document.getElementById('score');
+const score = document.querySelector('#score label');
 
 const nextBtn = document.getElementById('next');
 
-const prevBtn = document.getElementById('prev');
+const restartBtn = document.getElementById('restart');
 
-q_list = [
-{
-    question: "Q:1+6 = ?",
-    answer: 7
-},
-{
-    question: "Q:3+7 = ?",
-    answer:10
-},
-{
-    question: "Q:8+5 = ?",
-    answer: 13
-},
-{
-    question: "Q:2+4 = ?",
-    answer: 6
-},
-{
-    question: "Q:3+5 = ?",
-    answer: 8
-}];
+const notePoints = document.querySelector('.note');
 
 startBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    startBody.style.height = "auto";
+    notePoints.classList.remove('hide');
     ansBody.classList.add('show');
     startBtn.classList.add('hide');
-    let randomQ = Math.floor(Math.random() * q_list.length);
-    display.innerText = q_list[randomQ].question;
+    display.style.animation = "displaySlide .8s ease-in-out";
+    answer.style.animation = "slide .8s ease-in-out";
+    ansBtn.style.animation = "slide .8s ease-in-out";
+    score.style.animation = "show .8s ease-in-out";
+    answer.value = "";
+    getQuestionAns();
 });
 
 nextBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    display.style.animation = "displaySlide .8s ease-in-out";
+    answer.style.animation = "slide .8s ease-in-out";
+    ansBtn.style.animation = "slide .8s ease-in-out";
+    nextBtn.style.animation = "none";
+    score.style.animation = "none";
     answer.value = "";
-    let randomQ = Math.floor(Math.random() * q_list.length);
-    display.innerText = q_list[randomQ].question;
+    displayIncorrect.innerText = "";
     ansBtn.style.display = "block";
+    i=0;
+    getQuestionAns();
 });
 
-prevBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    answer.value = "";
-    let randomQ = Math.floor(Math.random() * q_list.length);
-    display.innerText = q_list[randomQ].question;
-    ansBtn.style.display = "block";
-});
-
+let i = 0;
 ansBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    let isEqual = display.innerText.indexOf('=');
-    let question = display.innerText.slice(2, isEqual - 1);
-    let n1, n2, op, tempAns;
-    n1 = parseInt(question[0]);
-    op = question[1];
-    n2 = parseInt(question[2]);
-    if(op == '+'){
-        tempAns = n1 + n2;
-    }else if(op == '-'){
-        tempAns = n1 - n2;
-    } else if(op == '*'){
-        tempAns = n1 * n2;
-    } else if(op == '/'){
-        tempAns = n1 / n2;
-    }else{
-        console.log("Invalid Operator");
+    let displayText = display.innerText.split(' ');
+    let ans = eval(displayText[1]);
+    console.log('displayText',displayText, displayText[1][1],ans);
+    display.style.animation = "none";
+    ansBtn.style.animation = "none";
+    answer.style.animation = "none";
+    display.style.animation = "none";
+    displayIncorrect.style.animation = "none";
+    if(ans == "Infinity" || ans == "NaN"){
+        ans = "undefined";
     }
-    if(parseInt(answer.value) == tempAns){
+    if(answer.value == ans){
+        display.style.animation = "pop .8s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
+        display.innerText = "Well Done!!, Correct Answer";
         displayIncorrect.innerText = "";
-        display.innerText = "Well Done!, You are Correct!";
-        score.innerHTML = `Score :<span>${parseInt(score.lastChild.innerText) + 1}</span>`;
-        if(score.lastChild.innerText == 10){
-            display.style.color = "green";
-            display.style.fontSize = "2rem";
-            nextBtn.style.display = "none";
-            prevBtn.style.display = "none";
-            answer.style.display = "none";
-            display.innerText = "You Win!!";
-            ansBtn.style.display = "none";
-        }
+        i=0;
         ansBtn.style.display = "none";
+        score.style.animation = "show .8s ease-in-out";
+        score.innerText = parseInt(score.innerText) + 1;
+        nextBtn.style.animation = " pop 1.5s ease-in-out infinite";
+        nextBtn.addEventListener("mouseover", (e) => {
+            e.preventDefault();
+            nextBtn.style.animation = "none";
+        });
+    } else {
+        displayIncorrect.style.animation = "pop .9s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
+        displayIncorrect.innerText = `It's Wrong, Try Again(${i+=1})`
+        if(i == 3){
+            displayIncorrect.style.animation = "none";
+            displayIncorrect.innerText = `You have reached maximum attempts`;
+            display.innerHTML = `Correct Answer is <strong><em>${ans}</em></strong>`;
+            ansBtn.style.display = "none";
+            i = 0;
+        }
     }
-    else{
-        displayIncorrect.innerText = "Try Again!";
+    if(parseInt(score.innerText) == 5){
+        display.style.fontSize = ".9rem";
+        display.style.fontWeight = "lighter";
+        display.style.color = "green";
+        display.innerText = "Congratulations!!, You have completed the test.";
+        ansBtn.style.display = "none";
+        nextBtn.style.display = "none";
+        answer.style.display = "none";
+        restartBtn.style.display = "block";
     }
 });
 
+restartBtn.addEventListener("click", () =>document.location.reload());
 
 
 
 
-
-// function getQuestionAns(){
-//     let randomQ = Math.floor(Math.random() * q_list.length);
-//     display.innerText = q_list[randomQ].question;
-//     ansBtn.addEventListener("click", (e) =>{
-//         e.preventDefault();
-//         if(parseInt(answer.value) == q_list[randomQ].answer){
-//             display.innerText = "Well Done!, You are Correct!";
-//         }
-//         else{
-//             display.innerText = "Try Again!" + q_list[randomQ].question;
-//         }
-//         answer.value = "";
-//     });
-// }
+function getQuestionAns(){
+    
+    let n1 = Math.floor(Math.random() * 10);
+    let n2 = Math.floor(Math.random() * n1);
+    n1 = String(n1);
+    n2 = String(n2);
+    let op =['+','-','*','/'];
+    let randomOp = op[Math.floor(Math.random() * op.length)];
+    if(randomOp == '/'){
+        getn1 = Math.floor(Math.random() * 10);
+        getn2 = Math.floor(Math.random() * getn1);
+    }
+    display.innerText = `Q: ${n1}${randomOp}${n2} = ?`;
+}
