@@ -87,6 +87,11 @@ ansBtn.addEventListener("click", (e) => {
     answer.style.animation = "none";
     display.style.animation = "none";
     displayIncorrect.style.animation = "none";
+    if(displayText[1][1] === '/'){
+        if(ans % 1 !== 0){
+            ans = ans.toFixed(2);
+        }
+    }
     if(ans == "Infinity" || ans == NaN){
         ans = "undefined";
     }
