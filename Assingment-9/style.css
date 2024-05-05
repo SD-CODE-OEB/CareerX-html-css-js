@@ -13,6 +13,7 @@ body{
     background-color: #f5f5f5;
     height: 100dvh;
     width: 100vw;
+    overflow: hidden;
     font-family: 'Mukta', sans-serif;
 
 }
@@ -27,11 +28,12 @@ body{
     margin: auto;
     background-color: #fbf6be;
     border: 1px solid black;
+    overflow: hidden;
 }
 
 .head{
     display: inline-flex;
-    height: 200px;
+    height: auto;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +46,13 @@ body{
     padding: 10px;
     margin: 10px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 25px 5px 25px 5px;
+}
+.head h3{
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #333;
+    font-weight: 400;
 }
 
 .note{
@@ -60,6 +68,54 @@ body{
     font-weight: 400;
     border-radius: 5px;
     margin: 10px;
+}
+
+.opt-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 250px;
+    height: 60px;
+}
+
+.opt-box p input[type="radio"]{
+    border: 3px solid #c3324c;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    color: #c3324c;
+    background-color: #000;
+    /* opacity: 0; */
+}
+.opt-box p label{
+    font-size: 1rem;
+    color:#c3324c;
+    font-weight: 400;
+    cursor: pointer;
+    margin: 10px 0;
+
+}
+
+.new span{
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 10px;
+}
+.new{
+    color: #333;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 400;
+    margin: 10px;
+}
+
+.notes{
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .head button{
     width: 200px;
@@ -78,15 +134,12 @@ body{
 .head button:hover{
     font-weight: 700;
     width: 150px;
-    color: chartreuse;
-    background: #000;
+    color: #fff;
+    background: #333;
+    border: transparent;
     border-radius: 25px;
     padding: 5px;
     transform: scale(1.1);
-}
-
-.hide{
-    display: none;
 }
 
 #start.hide{
@@ -304,4 +357,8 @@ button:hover{
     .ans-body .display2{
         margin-top: 20px;
     }
+}
+
+.hide{
+    display: none;
 }

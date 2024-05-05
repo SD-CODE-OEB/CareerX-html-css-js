@@ -21,17 +21,40 @@ const restartBtn = document.getElementById('restart');
 
 const notePoints = document.querySelector('.note');
 
+const easyMode = document.getElementById('easy');
+
+const hardMode = document.getElementById('hard');
+
+const optBox = document.getElementById('opt-box');
+
+const selectModeH3 = document.querySelector('h3');
+
 startBtn.addEventListener("click", (e) => {
     e.preventDefault();
     notePoints.classList.remove('hide');
     ansBody.classList.add('show');
     startBtn.classList.add('hide');
+    nextBtn.classList.remove('hide');
     display.style.animation = "displaySlide .8s ease-in-out";
     answer.style.animation = "slide .8s ease-in-out";
     ansBtn.style.animation = "slide .8s ease-in-out";
     score.style.animation = "show .8s ease-in-out";
+    optBox.classList.add('hide');
+    selectModeH3.classList.add('hide');
     answer.value = "";
-    getQuestionAns();
+    if(easyMode.checked){
+        let newNote = document.createElement('p');
+        newNote.innerHTML = "<span>EASY-MODE</span>: Questions with one digit(0-10).";
+        newNote.classList.add('new');
+        notes.appendChild(newNote);
+        getQuestionEasy();
+    } else if(hardMode.checked){
+        let newNote = document.createElement('p');
+        newNote.innerHTML = "<span>HARD-MODE</span>: Questions with two digits(0-100).";
+        newNote.classList.add('new');
+        notes.appendChild(newNote);
+        getQuestionHard();
+    }
 });
 
 nextBtn.addEventListener("click", (e) => {
@@ -45,10 +68,15 @@ nextBtn.addEventListener("click", (e) => {
     displayIncorrect.innerText = "";
     ansBtn.style.display = "block";
     i=0;
-    getQuestionAns();
+    if(easyMode.checked){
+        getQuestionEasy();
+    } else if(hardMode.checked){
+        getQuestionHard();
+    }
 });
 
 let i = 0;
+
 ansBtn.addEventListener("click", (e) => {
     e.preventDefault();
     let displayText = display.innerText.split(' ');
@@ -95,12 +123,9 @@ ansBtn.addEventListener("click", (e) => {
     }
 });
 
-restartBtn.addEventListener("click", () =>document.location.reload());
+restartBtn.addEventListener("click", () => document.location.reload());
 
-
-
-
-function getQuestionAns(){
+function getQuestionEasy(){
     
     let n1 = Math.floor(Math.random() * 10);
     let n2 = Math.floor(Math.random() * n1);
@@ -110,6 +135,20 @@ function getQuestionAns(){
     let randomOp = op[Math.floor(Math.random() * op.length)];
     if(randomOp == '/'){
         getn1 = Math.floor(Math.random() * 10);
+        getn2 = Math.floor(Math.random() * getn1);
+    }
+    display.innerText = `Q: ${n1}${randomOp}${n2} = ?`;
+}
+
+function getQuestionHard(){
+    let n1 = Math.floor(Math.random() * 100);
+    let n2 = Math.floor(Math.random() * n1);
+    n1 = String(n1);
+    n2 = String(n2);
+    let op =['+','-','*','/'];
+    let randomOp = op[Math.floor(Math.random() * op.length)];
+    if(randomOp == '/'){
+        getn1 = Math.floor(Math.random() * 100);
         getn2 = Math.floor(Math.random() * getn1);
     }
     display.innerText = `Q: ${n1}${randomOp}${n2} = ?`;
