@@ -243,40 +243,47 @@ display: none;
     margin: 10px;
 }
 
-.ans-box button:focus{
+.ans-box button:focus, .ans-box button:hover{
     border: 3px solid green;
     background-color: #fff;
+    transform: scale(1.1);
     color: green;
 }
 .btn-box{
-    width: 400px;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 .btn-box button{
-    width: 300px;
+    width:50px;
     font-size: 1rem;
     font-weight: 600;
-    padding: 10px;
-    border: 2px solid brown;
-    background-color: chocolate;
-    color: #fff;
-    border-radius: 5px;
     outline: none;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     margin: 10px;
 }
 
+.btn-box #next{
+    width: 50px;
+    padding:10px 5px; 
+    height: 50px;
+    border-radius: 50%;
+    color: yellow;
+    border: 2px solid yellow;
+    background-color: red;
+}
+
 
 .btn-box button:hover{
     font-weight: 700;
     animation: none;
+    border: 4px ;
     border-radius: 25px;
     transform: scale(1.1);
-    width: 150px;
+    /* width: 150px; */
 }
 
 .btn-box button:focus{
@@ -292,9 +299,6 @@ display: none;
     border-radius: 10px;
 }
 
-button:hover{
-    transform: scale(1.1);
-}
 @keyframes slide {
     0%{
         transform: translateX(-200%);
@@ -303,6 +307,7 @@ button:hover{
         transform: translateX(0%);
     }
 }
+
 @keyframes displaySlide {
     0%{
         transform: translateY(-500%);
@@ -313,6 +318,7 @@ button:hover{
         opacity: 1;
     }  
 }
+
 @keyframes show {
     0%{
         opacity: 0;
@@ -322,6 +328,7 @@ button:hover{
     }
     
 }
+
 @keyframes pop{
     0%{
         transform: scale(0);
@@ -332,11 +339,7 @@ button:hover{
         opacity: 1;
     }
 }
-@keyframes popout {
-    from{transform:scale(0)}
-    80%{transform:scale(1.2)}
-    to{transform:scale(1)}
-}
+
 @media only screen and (max-width: 680px){
     .container{
         width: 100%;

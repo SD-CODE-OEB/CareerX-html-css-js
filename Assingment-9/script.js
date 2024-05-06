@@ -59,7 +59,9 @@ startBtn.addEventListener("click", (e) => {
 
 nextBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    nextBtn.innerText = "Skip";
     display.style.animation = "displaySlide .8s ease-in-out";
+    answer.classList.remove('hide');
     answer.style.animation = "slide .8s ease-in-out";
     ansBtn.style.animation = "slide .8s ease-in-out";
     nextBtn.style.animation = "none";
@@ -99,14 +101,16 @@ ansBtn.addEventListener("click", (e) => {
         display.style.animation = "pop .8s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
         display.innerText = "Well Done!!, Correct Answer";
         displayIncorrect.innerText = "";
-        i=0;
         ansBtn.style.display = "none";
+        nextBtn.innerText = "Next";
         score.style.animation = "show .8s ease-in-out";
         score.innerText = parseInt(score.innerText) + 1;
-        nextBtn.style.animation = " pop 1.5s ease-in-out";
+        nextBtn.style.animation = " pop 1s ease-in-out";
+        answer.classList.add('hide');
+        i=0;
     } else {
         displayIncorrect.style.animation = "pop .9s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
-        displayIncorrect.innerText = `It's Wrong, Try Again(${i+=1})`
+        displayIncorrect.innerText = `It's Wrong, Try Again(${i+=1})`;
         if(i == 3){
             displayIncorrect.style.animation = "none";
             displayIncorrect.innerText = `You have reached maximum attempts`;
