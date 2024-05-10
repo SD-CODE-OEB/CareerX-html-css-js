@@ -3,154 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
     <title>Cafe Page</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 30px;
-        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-          "Lucida Sans", Arial, sans-serif;
-      }
-      .head {
-        display: flex;
-        justify-content: space-between;
-        width: 50%;
-        margin: 10px;
-      }
-      .line {
-        width: 50%;
-        height: 1px;
-        background-color: black;
-        overflow: hidden;
-      }
-      .container {
-        display: flex;
-        gap: 20px;
-        justify-content: space-evenly;
-        align-content: center;
-        flex-wrap: wrap;
-        padding: 8px;
-        width: 50%;
-        margin: 10px;
-      }
-      .card {
-        border: 1px solid gainsboro;
-        border-radius: 10px;
-        height: 250px;
-        width: 200px;
-        background-color: gainsboro;
-        overflow: hidden;
-      }
-      .card img {
-        width: 100%;
-        height: 200px;
-        transition: all 1s ease;
-        object-fit: cover;
-      }
-      /* .card:hover img {
-        width: 200px;
-        height: 200px;
-      } */
-
-      .card .info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
-        background-color: gainsboro;
-      }
-      .card .info .cost {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        font-size: 12px;
-        padding: 5px;
-      }
-      .card .info .cost button {
-        margin-bottom: 5px;
-        border-radius: 5px;
-        padding: 1px;
-        width: 35px;
-        cursor: pointer;
-      }
-    </style>
   </head>
   <body>
+    <div class="menu">
     <div class="head">
       <p>Coffee Shop</p>
-      <p>Cart:0</p>
-    </div>
+      <span class="material-symbols-outlined cart" onclick="checkOut()">
+      shopping_cart
+      </span>
+      </div>
     <div class="line"></div>
     <div class="container">
       <div class="card c1">
-        <img src="./Images/1.PNG" alt="" />
-        <div class="info">
-          <h4>Latte</h4>
-          <p class="cost">
-            Price:$99
-            <button type="button">add</button>
-          </p>
+      <img src="./Images/1.PNG" alt="" />
+      <div class="info">
+        <h4>Latte</h4>
+        <div class="cost">
+        Price:$99
+        <button type="button" class="add" onclick="addToCart()">add</button>
         </div>
+      </div>
       </div>
       <div class="card c2">
-        <img src="./Images/2.PNG" alt="" />
-        <div class="info">
-          <h4>Cappucinno</h4>
-          <p class="cost">
-            Price:$99
-            <button type="button">add</button>
-          </p>
+      <img src="./Images/2.PNG" alt="" />
+      <div class="info">
+        <h4>Cappucinno</h4>
+        <div class="cost">
+        Price:$99
+        <button type="button" class="add" onclick="addToCart()">add</button>
         </div>
+      </div>
       </div>
       <div class="card c3">
-        <img src="./Images/3.PNG" alt="" />
-        <div class="info">
-          <h4>Sandwich</h4>
-          <p class="cost">
-            Price:$99
-            <button type="button">add</button>
-          </p>
+      <img src="./Images/3.PNG" alt="" />
+      <div class="info">
+        <h4>Sandwich</h4>
+        <div class="cost">
+        Price:$99
+        <button type="button" class="add" onclick="addToCart()">add</button>
         </div>
+      </div>
       </div>
       <div class="card c4">
-        <img src="./Images/4.PNG" alt="" />
-        <div class="info">
-          <h4>Novelty</h4>
-          <p class="cost">
-            Price:$99
-            <button type="button">add</button>
-          </p>
+      <img src="./Images/4.PNG" alt="" />
+      <div class="info">
+        <h4>Novelty</h4>
+        <div class="cost">
+        Price:$99
+        <button type="button" class="add" onclick="addToCart()">add</button>
         </div>
+      </div>
       </div>
       <div class="card c5">
-        <img src="./Images/5.PNG" alt="" />
-        <div class="info">
-          <h4>Soy Milk</h4>
-          <p class="cost">
-            Price:$99
-            <button type="button">add</button>
-          </p>
+      <img src="./Images/5.PNG" alt="" />
+      <div class="info">
+        <h4>Soy Milk</h4>
+        <div class="cost">
+        Price:$99
+        <button type="button" class="add" onclick="addToCart()">add</button>
         </div>
+      </div>
       </div>
       <div class="card c6">
-        <img src="./Images/6.PNG" alt="" />
-        <div class="info">
-          <h4>Cocoa Blocks</h4>
-          <p class="cost">
-            Price:$99
-            <button type="button">add</button>
-          </p>
-        </div>
+      <img src="./Images/6.PNG" alt="" />
+      <div class="info">
+        <h4>Cocoa Blocks</h4>
+        <p class="cost">
+        Price:$99
+        <button type="button" class="add" onclick="addToCart()">add</button>
+        </p>
+      </div>
       </div>
     </div>
+  </div>
+  <div class="c-menu">
+    <h1>CHECK-OUT</h1>
+   <div class="btn-box">
+    <button type="button" class="order" id="order">
+    Order Now
+    </button>
+    <button type="button" class="cancel" id="cancel">
+    Cancel
+    </button>
+   </div>
+  </div>
+    <script src="script.js"></script>
   </body>
 </html>
