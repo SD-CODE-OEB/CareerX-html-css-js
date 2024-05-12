@@ -1,95 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="style.css">
-    <title>Cafe Page</title>
-  </head>
-  <body>
-    <div class="menu">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Cafe Page</title>
+</head>
+
+<body>
+  <div class="menu">
     <div class="head">
       <p>Coffee Shop</p>
-      <span class="material-symbols-outlined cart" onclick="checkOut()">
-      shopping_cart
+      <span class="material-symbols-outlined cart">
+        shopping_cart
       </span>
-      </div>
+    </div>
     <div class="line"></div>
     <div class="container">
       <div class="card c1">
-      <img src="./Images/1.PNG" alt="" />
-      <div class="info">
-        <h4>Latte</h4>
-        <div class="cost">
-        Price:$99
-        <button type="button" class="add" onclick="addToCart()">add</button>
+        <img src="./Images/1.PNG" alt="" />
+        <div class="info">
+          <h4>Latte</h4>
+          <div class="cost">
+            <h4>Price:$<span>5</span></h4> 
+            <button type="button" class="add a1">add</button>
+          </div>
         </div>
-      </div>
       </div>
       <div class="card c2">
-      <img src="./Images/2.PNG" alt="" />
-      <div class="info">
-        <h4>Cappucinno</h4>
-        <div class="cost">
-        Price:$99
-        <button type="button" class="add" onclick="addToCart()">add</button>
+        <img src="./Images/2.PNG" alt="" />
+        <div class="info">
+          <h4>Cappucinno</h4>
+          <div class="cost">
+            <h4>Price:$<span>10</span></h4> 
+            <button type="button" class="add a2">add</button>
+          </div>
         </div>
-      </div>
       </div>
       <div class="card c3">
-      <img src="./Images/3.PNG" alt="" />
-      <div class="info">
-        <h4>Sandwich</h4>
-        <div class="cost">
-        Price:$99
-        <button type="button" class="add" onclick="addToCart()">add</button>
+        <img src="./Images/3.PNG" alt="" />
+        <div class="info">
+          <h4>Sandwich</h4>
+          <div class="cost">
+            <h4>Price:$<span>15</span></h4> 
+            <button type="button" class="add a3">add</button>
+          </div>
         </div>
-      </div>
       </div>
       <div class="card c4">
-      <img src="./Images/4.PNG" alt="" />
-      <div class="info">
-        <h4>Novelty</h4>
-        <div class="cost">
-        Price:$99
-        <button type="button" class="add" onclick="addToCart()">add</button>
+        <img src="./Images/4.PNG" alt="" />
+        <div class="info">
+          <h4>Novelty</h4>
+          <div class="cost">
+            <h4>Price:$<span>8</span></h4> 
+            <button type="button" class="add a4">add</button>
+          </div>
         </div>
-      </div>
       </div>
       <div class="card c5">
-      <img src="./Images/5.PNG" alt="" />
-      <div class="info">
-        <h4>Soy Milk</h4>
-        <div class="cost">
-        Price:$99
-        <button type="button" class="add" onclick="addToCart()">add</button>
+        <img src="./Images/5.PNG" alt="" />
+        <div class="info">
+          <h4>Soy Milk</h4>
+          <div class="cost">
+            <h4>Price:$<span>20</span></h4>
+            <button type="button" class="add a5">add</button>
+          </div>
         </div>
       </div>
-      </div>
       <div class="card c6">
-      <img src="./Images/6.PNG" alt="" />
-      <div class="info">
-        <h4>Cocoa Blocks</h4>
-        <p class="cost">
-        Price:$99
-        <button type="button" class="add" onclick="addToCart()">add</button>
-        </p>
+        <img src="./Images/6.PNG" alt="" />
+        <div class="info">
+          <h4>Cocoa Blocks</h4>
+          <div class="cost">
+            <h4>Price:$<span>2</span></h4>
+            <button type="button" class="add a6">add</button>
+          </div>
+        </div>
       </div>
-      </div>
-    </div>
+  </div>
   </div>
   <div class="c-menu">
     <h1>CHECK-OUT</h1>
-   <div class="btn-box">
-    <button type="button" class="order" id="order">
-    Order Now
-    </button>
-    <button type="button" class="cancel" id="cancel">
-    Cancel
-    </button>
-   </div>
+    <div class="cart-items"></div>
+    <div class="btn-box">
+      <button type="button" class="order" id="order">
+        Order Now
+      </button>
+      <button type="button" class="cancel" id="cancel">
+        Cancel
+      </button>
+    </div>
   </div>
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
