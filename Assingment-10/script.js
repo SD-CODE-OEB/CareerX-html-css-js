@@ -56,6 +56,13 @@ startBtn.onclick = () =>{
     createImgCard();
     startGame();
 }
+document.addEventListener('keydown', (e) =>{
+    if(e.keyCode === 32){
+            qDisplay.children[0].remove()
+            createImgCard();
+            startGame();
+    }
+})
 
 function startGame(){
     document.addEventListener('keydown', (e) =>{
