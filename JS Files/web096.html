@@ -10,10 +10,10 @@
     <p><input type="text" id="username"></p>
     <p><input type="password" id="password"></p>
     <p><input type="checkbox">Remember Me</p>
-    <button>Login</button>
+    <button type="button">Login</button>
     <script>
-        document.cookie = "name=John;expires=Sun, 12 May 2024 12:00:00 UTC"
-        document.cookie = "pass=1234;expires=Sun, 12 May 2024 12:00:00 UTC"
+        document.cookie = `name=${username.value};expires=15 May 2023 12:00:00 UTC`
+        document.cookie = `pass=${password.value};expires=15 May 2024 12:00:00 UTC`
         //document.cookie = "name=John;expires=Sun, 12 May 2023 12:00:00 UTC"
         // document.cookie = "pass=1234;expires=Sun, 12 May 2023 12:00:00 UTC"
         console.log(document.cookie)

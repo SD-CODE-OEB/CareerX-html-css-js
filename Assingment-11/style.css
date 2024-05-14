@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+input[type="checkbox"] {
+  width: 50px;
+}
+input:focus {
+  outline: none;
+}
+input:hover {
+  border: 1px solid #333;
+}
+button {
+  width: 200px;
+  padding: 10px;
+  border: none;
+  margin: 10px 0;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.p-box {
+  position: relative;
+  z-index: 0;
+}
+
+.p-box .visibility {
+  position: absolute;
+  right: 10px;
+  background: #fff;
+  border-radius: 50%;
+  top: 10px;
+  z-index: 1;
+  color: #333;
+  cursor: pointer;
+}
