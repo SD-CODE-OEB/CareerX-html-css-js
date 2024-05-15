@@ -17,8 +17,8 @@ visibility.addEventListener("click", () => {
 
 login.addEventListener("click", function () {
   if (remember.checked) {
-    document.cookie = `name = ${name.value};expires=15 May 2024 12:00:00 UTC`;
-    document.cookie = `pass = ${pwd.value};expires=15 May 2024 12:00:00 UTC`;
+    document.cookie = `name = ${name.value};expires=18 May 2024 12:00:00 UTC`;
+    document.cookie = `pass = ${pwd.value};expires=18 May 2024 12:00:00 UTC`;
   }
   console.log(document.cookie);
 });
