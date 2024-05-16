@@ -19,13 +19,21 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: transform 1s ease;
+}
+.move.menu {
+  transform: translateX(-180px);
 }
 .head {
   display: flex;
   justify-content: space-between;
   width: 700px;
   margin: 10px;
+  transition: width 1s ease;
   position: relative;
+}
+.move.head {
+  width: 60%;
 }
 .cart {
   border-radius: 50%;
@@ -62,12 +70,17 @@ body {
   width: 800px;
   height: 100%;
   margin: 10px;
+  transition: width 1s ease;
+}
+.move.container {
+  width: 60%;
 }
 .card {
   border: 1px solid gainsboro;
   border-radius: 10px;
   height: 250px;
   width: 200px;
+  margin: 5px 0;
   background-color: gainsboro;
   overflow: hidden;
 }
@@ -77,11 +90,6 @@ body {
   transition: all 1s ease;
   object-fit: cover;
 }
-/* .card:hover img {
-    width: 200px;
-    height: 200px;
-  } */
-
 .card .info {
   display: flex;
   flex-direction: column;
@@ -89,6 +97,7 @@ body {
   align-items: center;
   height: 50px;
   background-color: gainsboro;
+  overflow: hidden;
 }
 .card .info .cost {
   display: flex;
@@ -106,35 +115,6 @@ body {
   cursor: pointer;
 }
 
-.card .info .items {
-  display: none;
-}
-
-.card .info .items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 75px;
-  padding: 5px;
-}
-
-.card .info .items input {
-  width: 30px;
-  height: 20px;
-  text-align: center;
-  border: none;
-}
-
-.card .info .items button {
-  border: none;
-  cursor: pointer;
-  height: 20px;
-  width: 20px;
-  border-radius: 0;
-  margin-bottom: 0;
-  background-color: black;
-  color: white;
-}
 .c-menu {
   display: flex;
   flex-direction: column;
@@ -179,7 +159,11 @@ body {
   width: 50%;
   height: 50px;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   cursor: pointer;
 }
 
@@ -191,12 +175,9 @@ body {
   background-color: red;
   color: white;
 }
-#order:hover,#cancel:hover {
+#order:hover,
+#cancel:hover {
   color: black;
-}
-
-.hide {
-  display: none;
 }
 
 .cart-create {
@@ -206,7 +187,7 @@ body {
   width: 100%;
   height: 75px;
   background-color: gainsboro;
-  animation: slide .8s cubic-bezier(0.215, 0.610, 0.355, 1);
+  animation: slide 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
   box-shadow: 0 0px 0 2px black;
   overflow: hidden;
 }
@@ -225,12 +206,12 @@ body {
   padding: 5px 0;
 }
 
-.cart-create .item-nm-cnt>*{
+.cart-create .item-nm-cnt > * {
   width: 100%;
   text-align: center;
 }
 
-.cart-create .add_remove{
+.cart-create .add_remove {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -239,14 +220,63 @@ body {
   padding: 0 5px;
 }
 
-.cart-create .add_remove span{
+.cart-create .add_remove span {
   cursor: pointer;
   background: #000;
   color: yellow;
-  padding:1px;
+  padding: 1px;
 }
 
+.overlay {
+  display: none;
+}
 
+.active.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.83);
+  z-index: 100;
+}
+.overlay h1 {
+  color: white;
+  font-size: 4rem;
+  background-color: rgba(0, 255, 51, 0.766);
+  padding: 10px;
+  border-radius: 10px;
+}
+#close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 2rem;
+  background-color: rgba(0, 255, 51, 0.766);
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay span {
+  color: white;
+  border: none;
+  font-size: 2rem;
+  background-color: rgba(0, 255, 51, 0.621);
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.overlay span:hover {
+  background-color: rgba(255, 255, 255, 0.594);
+}
 @keyframes slide {
   0% {
     transform: translateX(100%);
