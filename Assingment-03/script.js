@@ -203,7 +203,11 @@ function totalCost() {
 }
 
 orderBtn.onclick = function () {
-  orderComplete.classList.add("active");
+  if (checkOutItems.children.length === 0) {
+    alert("Select an Item to Place a Order");
+  } else {
+    orderComplete.classList.add("active");
+  }
 };
 
 closeBtn.onclick = function () {
