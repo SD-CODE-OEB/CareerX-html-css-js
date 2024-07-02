@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping App</title>
+    <link rel="stylesheet" href="../Assets/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body class="h-100 w-100 d-flex flex-column position-relative">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cafe</a>
+            <button class="btn btn-warning cart-btn position-relative">
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+                <span class="cart-items-count">0</span>
+            </button>
+        </div>
+    </nav>
+    <div class=" container cards-box">
+        <div class="row  w-75 m-auto gy-4"></div>
+    </div>
+    <div class="container cart position-absolute h-100 w-25 bg-dark rounded p-0">
+        <span
+            class="material-symbols-outlined close-cart text-light fs-2 p-2 position-absolute top-0 end-0">close</span>
+        <h2 class="text-light text-center">Cart</h2>
+        <div class="cart-items"></div>
+        <div class="total-price col-12 bg-success text-dark position-absolute bottom-0 start-0 p-2 me-5">
+            <h3 class="text-center">Total Price: $<span>0</span></h3>
+        </div>
+    </div>
+    <script src="../Assets/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js">
+    </script>
+</body>
+
+</html>

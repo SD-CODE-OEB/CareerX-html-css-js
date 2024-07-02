@@ -1,0 +1,110 @@
+.card .card-body {
+  padding: 0.5rem;
+}
+.card .card-body .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.card .card-body .card-text {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.card .card-body .btn {
+  padding: 0.4rem 0.8rem;
+}
+.cart {
+  margin-top: 3.6rem;
+  top: -150%;
+  transition: all 0.5s ease-in-out;
+  right: 0;
+  opacity: 0;
+}
+.active.cart {
+  margin-top: 3.6rem;
+  top: 0;
+  right: 0;
+  opacity: 1;
+}
+.cards-box {
+  transition: all 0.5s ease-in-out;
+}
+.active.cards-box {
+  transform: translate(-15%);
+}
+.close-cart {
+  cursor: pointer;
+}
+.cart-item {
+  box-shadow: 1px 2px 1px #646516;
+}
+.cart-items-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  color: yellow;
+  background-color: #000000;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+@media only screen and (max-width: 800px) {
+  .col-4 {
+    flex: 0 0 100%;
+    max-width: 50%;
+    padding-left: 30px;
+  }
+  .active.w-25 {
+    width: 35% !important;
+  }
+  .active.cards-box {
+    transform: translate(-20%);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+  }
+  .cart-item img {
+    width: 100%;
+  }
+  .cart-item .cart-item-name.ps-3 {
+    padding-left: 0.8rem !important;
+    padding-right: 3.5rem !important;
+  }
+  .cart-item .cart-item-name.pb-3 {
+    padding-bottom: 0 !important;
+  }
+  .cart-item .cart-item-name.w-75 {
+    width: 25% !important;
+  }
+  .cart-item .btns-box.justify-content-evenly,
+  .cart-item .btns-box.pe-2 {
+    justify-content: center !important;
+    padding-right: 0rem !important;
+  }
+  .cart-item .btns-box span.p-2 {
+    padding: 0.2rem !important;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .col-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .active.w-25 {
+    width: 100% !important;
+  }
+  .cart-item img {
+    width: auto;
+  }
+  .cart-item .btns-box.justify-content-evenly,
+  .cart-item .btns-box.pe-2 {
+    justify-content: space-around !important;
+    padding-right: 1rem !important;
+  }
+  .cart-item .btns-box span.p-2 {
+    padding: 1rem !important;
+  }
+}
